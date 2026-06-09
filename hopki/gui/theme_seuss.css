@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Patrick+Hand&family=Chewy&family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* ========== SHARED SEUSS PERSONALITY ========== */
+:root {
+  --font-main: 'Baloo 2', 'Patrick Hand', cursive, sans-serif;
+  --font-mono: 'Patrick Hand', 'Baloo 2', monospace;
+  --font-display: 'Chewy', 'Baloo 2', cursive;   /* bouncy headline face */
+  --radius: 16px;
+  --radius-card: 20px;
+  --card-border-width: 2.5px;
+
+  /* whimsy knobs — dial these up/down to taste */
+  --blob: 18px 26px 20px 24px / 24px 20px 26px 18px; /* organic, never-quite-straight corners */
+  --blob-soft: 14px 18px 16px 20px / 18px 16px 20px 14px;
+  --tilt: -1.1deg;          /* resting lean for cards */
+  --tilt-alt: 0.9deg;       /* alternate lean */
+  --pop: cubic-bezier(.34, 1.56, .64, 1); /* overshoot/bounce easing */
+}
+
+/* ========== DARK SEUSS ========== */
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --bg-surface: #161b22;
+  --bg-elevated: #1c2128;
+  --bg-input: #0d1117;
+  --border: #484f58;
+  --text: #c9d1d9;
+  --text-bright: #f0f6fc;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-bg: #1f6feb22;
+  --accent-border: #1f6feb55;
+  --green: #56d364;
+  --green-bg: #23863622;
+  --green-border: #23863655;
+  --red-btn: #E63B2E;
+  --purple: #bc8cff;
+  --purple-bg: #8957e522;
+  --purple-border: #8957e555;
+  --orange: #f0883e;
+  --orange-bg: #f0883e22;
+  --orange-border: #f0883e55;
+  --red: #f85149;
+  --yellow: #d29922;
+  --teal: #2ad4c4;                 /* Seuss turquoise */
+  --diff-add-bg: #23863618;
+  --diff-del-bg: #f8514918;
+  --pill-bg: #21262d;
+  --count-bg: #30363d;
+  --card-shadow: 3px 4px 0px #000000;
+  --card-shadow-hover: 6px 8px 0px #000000;
+  --card-shadow-selected: 6px 8px 0px var(--accent);
+  --topbar-bg: #161b22;
+  --topbar-accent: #E63B2E;
+  --topbar-shadow: 0 3px 0 #E63B2E;
+  --topbar-text: #f0f6fc;
+  --topbar-stripe: #E63B2E33;       /* Cat-in-the-Hat stripe over topbar */
+  --btn-shadow: 2px 2px 0 #000000;
+  --sidebar-stripe: #E63B2E11;
+  --dot-border: #58a6ff44;
+  --dot-tex: rgba(88, 166, 255, 0.05); /* faint page polka dots */
+  --toggle-icon: "☀️";
+}
+
+/* ========== LIGHT SEUSS ========== */
+[data-theme="light"] {
+  --bg: #F4E7C6;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFF0CC;
+  --bg-input: #FFFFFF;
+  --border: #E8B84B;
+  --text: #2B2B2B;
+  --text-bright: #1A1A1A;
+  --text-muted: #6B5B3E;
+  --accent: #2B78C4;
+  --accent-bg: #2B78C422;
+  --accent-border: #2B78C455;
+  --green: #4CAF50;
+  --green-bg: #4CAF5022;
+  --green-border: #4CAF5055;
+  --red-btn: #E63B2E;
+  --purple: #9C27B0;
+  --purple-bg: #9C27B022;
+  --purple-border: #9C27B044;
+  --orange: #FF8C00;
+  --orange-bg: #FF8C0022;
+  --orange-border: #FF8C0044;
+  --red: #E63B2E;
+  --yellow: #E8B84B;
+  --teal: #1CA3A3;                  /* Seuss turquoise */
+  --diff-add-bg: #4CAF5018;
+  --diff-del-bg: #E63B2E18;
+  --pill-bg: #FFF0CC;
+  --count-bg: #FFE4A0;
+  --card-shadow: 3px 4px 0px #2B2B2B;
+  --card-shadow-hover: 6px 8px 0px #2B2B2B;
+  --card-shadow-selected: 6px 8px 0px var(--accent);
+  --topbar-bg: #E63B2E;
+  --topbar-accent: #E63B2E;
+  --topbar-shadow: 0 3px 0 #B22E24;
+  --topbar-text: #FFFFFF;
+  --topbar-stripe: #ffffff33;        /* white stripes over the red bar */
+  --btn-shadow: 2px 2px 0 #2B2B2B;
+  --sidebar-stripe: #E63B2E22;
+  --dot-border: #2B2B2B;
+  --dot-tex: rgba(230, 59, 46, 0.06);
+  --toggle-icon: "🌙";
+}
+
+/* ========== BASE STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  /* a barely-there scatter of dots gives the page that storybook paper feel */
+  background:
+    radial-gradient(var(--dot-tex) 1.6px, transparent 1.7px) 0 0 / 24px 24px,
+    radial-gradient(var(--dot-tex) 1.6px, transparent 1.7px) 12px 12px / 24px 24px,
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.35s, color 0.35s;
+}
+
+/* Bouncy storybook headings */
+h1, h2, h3, .heading, .topbar-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  color: var(--text-bright);
+}
+h1 { line-height: 1.05; }
+
+/* Links get a hand-drawn wavy underline */
+a {
+  color: var(--accent);
+  text-decoration: underline wavy var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+a:hover { color: var(--red); text-decoration-color: var(--red); }
+
+::selection { background: var(--yellow); color: var(--text-bright); }
+
+/* Chunky storybook scrollbar */
+*::-webkit-scrollbar { width: 12px; height: 12px; }
+*::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-track { background: var(--pill-bg); }
+
+/* ========== BADGE SYSTEM ========== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 999px;            /* full pill = jellybean */
+  white-space: nowrap;
+  font-family: var(--font-main);
+  border: 1.5px solid transparent;
+  transition: transform 0.25s var(--pop), box-shadow 0.25s var(--pop), background 0.35s, color 0.35s;
+}
+/* alternate a tiny lean so a row of badges looks hand-placed */
+.badge:nth-child(odd)  { transform: rotate(var(--tilt-alt)); }
+.badge:nth-child(even) { transform: rotate(var(--tilt)); }
+.badge:hover {
+  transform: rotate(0deg) translateY(-2px) scale(1.06);
+  box-shadow: 2px 3px 0 var(--dot-border);
+}
+
+.badge.repo {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.badge.scope {
+  background: var(--purple-bg);
+  color: var(--purple);
+  border-color: var(--purple-border);
+}
+
+.badge.domain {
+  background: var(--green-bg);
+  color: var(--green);
+  border-color: var(--green-border);
+}
+
+.badge.version {
+  background: var(--count-bg);
+  color: var(--text-muted);
+}
+
+.badge.invocable {
+  background: var(--orange-bg);
+  color: var(--orange);
+  border-color: var(--orange-border);
+}
+
+.badge.size {
+  background: var(--count-bg);
+  color: var(--text-muted);
+}
+
+/* ========== DRIFT DOTS ========== */
+.drift-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  margin-left: auto;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.drift-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--dot-border);
+  transition: transform 0.25s var(--pop);
+}
+.drift-dot:hover { transform: scale(1.25) rotate(8deg); }
+
+.drift-dot.synced {
+  background: var(--green);
+}
+
+.drift-dot.minor {
+  background: var(--yellow);
+}
+
+.drift-dot.diverged {
+  background: var(--red);
+  animation: seuss-pulse 1.6s ease-in-out infinite; /* a worried little jiggle */
+}
+
+/* ========== OPTIONAL WHIMSY COMPONENTS ==========
+   Additive styling for the components the variables imply (cards, buttons,
+   topbar, pills). Safe to keep or delete — they only layer shape/motion on top
+   of your existing layout. */
+
+.card {
+  background: var(--bg-surface);
+  border: var(--card-border-width) solid var(--border);
+  border-radius: var(--blob);
+  box-shadow: var(--card-shadow);
+  padding: 18px 20px;
+  transform: rotate(var(--tilt));
+  transition: transform 0.3s var(--pop), box-shadow 0.3s var(--pop);
+}
+.card:nth-child(even) { transform: rotate(var(--tilt-alt)); border-radius: var(--blob-soft); }
+.card:hover {
+  transform: rotate(0deg) translate(-1px, -3px);
+  box-shadow: var(--card-shadow-hover);
+}
+.card.selected {
+  border-color: var(--accent);
+  box-shadow: var(--card-shadow-selected);
+  transform: rotate(0deg);
+}
+
+button, .btn {
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--text-bright);
+  background: var(--bg-elevated);
+  border: 2.5px solid var(--text-bright);
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.18s var(--pop), box-shadow 0.18s var(--pop), background 0.2s;
+}
+button:hover, .btn:hover { transform: translate(-1px, -2px); box-shadow: 4px 5px 0 var(--text-bright); }
+button:active, .btn:active { transform: translate(1px, 2px); box-shadow: 1px 1px 0 var(--text-bright); }
+
+.btn-primary {
+  background: var(--red-btn);
+  color: #fff;
+  border-color: var(--text-bright);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--pill-bg);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+/* Cat-in-the-Hat striped topbar */
+.topbar {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 22px,
+      var(--topbar-stripe) 22px 44px
+    ),
+    var(--topbar-bg);
+  color: var(--topbar-text);
+  box-shadow: var(--topbar-shadow);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.topbar .topbar-title { color: var(--topbar-text); }
+
+/* Theme toggle button shows the right celestial body */
+.theme-toggle::after { content: var(--toggle-icon); }
+
+/* ========== KEYFRAMES ========== */
+@keyframes seuss-pulse {
+  0%, 100% { transform: scale(1)   rotate(0deg); }
+  50%      { transform: scale(1.2) rotate(-6deg); }
+}
+@keyframes seuss-wobble {
+  0%, 100% { transform: rotate(var(--tilt)); }
+  50%      { transform: rotate(var(--tilt-alt)); }
+}
+
+/* Respect users who'd rather things hold still */
+@media (prefers-reduced-motion: reduce) {
+  *, .badge, .card, .drift-dot.diverged { animation: none !important; transition: none !important; }
+  .badge, .card { transform: none !important; }
+}

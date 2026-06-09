@@ -1,0 +1,24 @@
+# Campaign configuration for the hopkinson_may_26 runs (Inc + Ti64 specimens).
+#
+# This one file replaces the per-folder incid.exp / incid.spec / DAMP_F trio: every sp* folder
+# below inherits it (hopki.config walks up the tree). To vary a single shot, drop a small
+# hopki.toml in that sp* folder overriding only the keys that differ — see hopki/config.py.
+
+[bar]                  # the split Hopkinson bar apparatus (shared by every shot)
+nlong = 2000           # record length (samples)
+npoint = 256           # samples per windowed pulse
+tpp = 0.5e-7           # sampling interval (s)
+diam_bar = 0.01905     # bar diameter (m)
+E = 1.9e11             # bar Young's modulus (Pa)
+x1 = 0.9756             # gauge-1 -> specimen distance (m)
+x2 = 0.5748             # specimen -> gauge-2 distance (m)
+c0 = 4800              # bar wave speed (m/s)
+gfact = 2.13           # strain-gauge factor
+vbridge = 10.15        # bridge excitation voltage (V)
+damp_f = -1.8e-2       # dispersion amplitude-damping coefficient
+
+[specimen]             # placeholder specimen dims (carried over from the legacy defaults);
+diam = 6e-3            # override per sp* folder with the real measured values
+length = 6e-3
+tdelay_us = 0.0
+pretr_pct = 10.0

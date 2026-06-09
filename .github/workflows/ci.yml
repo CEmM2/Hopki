@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Tests (Python 3.12)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux Qt runtime libs
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libxkbcommon0 libgl1
+
+      - name: Set up uv (+ Python 3.12)
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync --extra gui
+
+      - name: Run tests
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          uv run python -m unittest \
+            tests.analysis.test_twobar \
+            tests.analysis.test_roundtrip \
+            tests.analysis.test_geometry \
+            tests.Converter.test_wft_to_csv \
+            tests.figcorr.test_figcorr \
+            tests.figures.test_figio \
+            tests.figures.test_figmpl \
+            tests.figures.test_figures_panel \
+            tests.gui.test_controller \
+            tests.gui.test_resources
