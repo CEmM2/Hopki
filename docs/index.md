@@ -41,3 +41,7 @@ Signal polarity
 ## More Detail
 
 The [legacy single-page overview](legacy-overview.html) is still included for historical context. The MkDocs pages are the maintained user-facing guide.
+
+## PDF Copy
+
+Download a printable copy of this guide: [Hopki_User_Guide.pdf](Hopki_User_Guide.pdf).

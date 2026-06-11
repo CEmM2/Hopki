@@ -63,6 +63,8 @@ uv sync --extra docs
 uv run mkdocs serve
 ```
 
+A PDF copy is available at [`docs/Hopki_User_Guide.pdf`](docs/Hopki_User_Guide.pdf).
+
 ## Test data
 
 The fixtures under `tests/` include representative recorded signals from real split Hopkinson
