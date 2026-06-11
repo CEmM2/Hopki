@@ -52,6 +52,9 @@ packaging = [
 	"nuitka",
 	"zstandard",
 ]
+docs = [
+	"mkdocs",
+]
 # Declared but not yet wired in — staged for future plotting work. Kept out of the core
 # install so the CLI/source install stays light. Install with: uv sync --extra plotting
 plotting = [

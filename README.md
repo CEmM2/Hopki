@@ -56,7 +56,12 @@ uv run figcorr CURVE --cut 256 --zero          # curve cleanup (toe correction, 
 
 ## Documentation
 
-A full user guide is bundled at [`docs/index.html`](docs/index.html) — open it in any browser.
+The user guide is now an MkDocs site under [`docs/`](docs/). Build or preview it with:
+
+```bash
+uv sync --extra docs
+uv run mkdocs serve
+```
 
 ## Test data
 
