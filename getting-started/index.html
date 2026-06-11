@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://cemm2.github.io/Hopki/getting-started/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Getting Started - Hopki User Guide</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../assets/stylesheets/hopki.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Hopki User Guide</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Getting Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../analysis-tab/" class="nav-link">Analysis Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../parameters/" class="nav-link">Parameters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../explore-tab/" class="nav-link">Explore Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../curve-cleanup-tab/" class="nav-link">Curve Cleanup Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../figures-tab/" class="nav-link">Figures Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../command-line/" class="nav-link">Command Line</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../legacy-overview.html" class="nav-link">Legacy Overview</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../analysis-tab/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/CEmM2/Hopki/edit/master/docs/getting-started.md" class="nav-link">Edit on CEmM2/Hopki
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#install-or-run" class="nav-link">Install Or Run</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#experiment-folder" class="nav-link">Experiment Folder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#minimal-hopkitoml" class="nav-link">Minimal hopki.toml</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#first-analysis" class="nav-link">First Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<h2 id="install-or-run">Install Or Run<a class="headerlink" href="#install-or-run" title="Permanent link">&para;</a></h2>
+<p>The easiest path is to download a prebuilt binary from the project releases page:</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Release asset</th>
+<th>First launch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS</td>
+<td><code>Hopki-macos-*.zip</code></td>
+<td>Unzip, then right-click <code>Hopki.app</code> and choose <strong>Open</strong> if macOS warns about an unsigned app.</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>Hopki-windows-*.zip</code></td>
+<td>Unzip and run <code>Hopki.exe</code>. If SmartScreen appears, choose <strong>More info</strong> then <strong>Run anyway</strong>.</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><code>Hopki-linux-*.tar.gz</code></td>
+<td>Extract and run <code>./Hopki</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>To run from source:</p>
+<pre><code class="language-bash">uv sync --extra gui
+uv run hopki-gui
+</code></pre>
+<p>To open a specific experiment at launch:</p>
+<pre><code class="language-bash">uv run hopki-gui path/to/experiment
+</code></pre>
+<h2 id="experiment-folder">Experiment Folder<a class="headerlink" href="#experiment-folder" title="Permanent link">&para;</a></h2>
+<p>Hopki expects an experiment directory with two signal channels and configuration.</p>
+<p>Signal files are resolved in this order:</p>
+<ol>
+<li>A local <code>hopki.toml</code> with a <code>[signals]</code> table.</li>
+<li><code>incid.inc</code> and <code>trans.tra</code>.</li>
+<li>The first two <code>WAVE*.FLT</code> files by filename, incident first.</li>
+</ol>
+<p>Configuration is resolved in layers:</p>
+<ol>
+<li>Built-in defaults.</li>
+<li>Any ancestor <code>hopki.toml</code> files, useful for campaign or bar constants.</li>
+<li>The experiment's own <code>hopki.toml</code>.</li>
+<li>Live edits made in the GUI.</li>
+</ol>
+<p>If no <code>hopki.toml</code> exists in the experiment tree, Hopki falls back to the legacy files <code>incid.exp</code>, <code>incid.spec</code>, and <code>DAMP_F</code> when they are present.</p>
+<h2 id="minimal-hopkitoml">Minimal <code>hopki.toml</code><a class="headerlink" href="#minimal-hopkitoml" title="Permanent link">&para;</a></h2>
+<pre><code class="language-toml">[bar]
+npoint = 450
+diam_bar = 0.0127
+E = 1.9e11
+c0 = 4800
+gfact = 2.13
+vbridge = 10.15
+damp_f = -0.018
+
+[specimen]
+diam = 0.004
+length = 0.004
+tdelay_us = 0
+pretr_pct = 10
+
+[signals]
+incident = &quot;WAVE0003.FLT&quot;
+transmitted = &quot;WAVE0004.FLT&quot;
+</code></pre>
+<p><code>x1</code> and <code>x2</code> may be included in <code>[bar]</code>. If either is omitted, Hopki estimates it from the signals and marks the value for verification in the Analysis tab.</p>
+<h2 id="first-analysis">First Analysis<a class="headerlink" href="#first-analysis" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click <strong>Load experiment...</strong>.</li>
+<li>Check that the <strong>Signals</strong> plot shows the incident/reflected channel and transmitted channel.</li>
+<li>Drag the dashed vertical marker to the start of the incident pulse. This sets <code>tim_cut</code>.</li>
+<li>If the pulse polarity is inverted, enable <strong>invert signal polarity</strong>.</li>
+<li>Adjust <strong>reflect shift</strong> until the <strong>Force equilibrium</strong> and <strong>Force difference</strong> plots look reasonable.</li>
+<li>Use <strong>Export results...</strong> to write output vectors, or <strong>sigma-epsilon -&gt; Figures</strong> to start a publication plot.</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../assets/javascripts/theme-toggle.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

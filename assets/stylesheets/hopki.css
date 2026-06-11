@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Patrick+Hand&family=Chewy&family=Fredoka:wght@400;500;600;700&display=swap");
+
+:root,
+body[data-theme="dark"] {
+  --font-main: "Baloo 2", "Patrick Hand", cursive, sans-serif;
+  --font-mono: "Patrick Hand", "Baloo 2", monospace;
+  --font-display: "Chewy", "Baloo 2", cursive;
+  --bg: #0d1117;
+  --bg-surface: #161b22;
+  --bg-elevated: #1c2128;
+  --bg-input: #0d1117;
+  --border: #484f58;
+  --text: #c9d1d9;
+  --text-bright: #f0f6fc;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-bg: #1f6feb22;
+  --accent-border: #1f6feb55;
+  --green: #56d364;
+  --purple: #bc8cff;
+  --orange: #f0883e;
+  --red: #f85149;
+  --yellow: #d29922;
+  --pill-bg: #21262d;
+  --card-shadow: 3px 4px 0 #000;
+  --topbar-bg: #161b22;
+  --topbar-shadow: 0 3px 0 #e63b2e;
+  --dot-tex: rgba(88, 166, 255, 0.05);
+}
+
+body[data-theme="light"] {
+  --bg: #f4e7c6;
+  --bg-surface: #ffffff;
+  --bg-elevated: #fff0cc;
+  --bg-input: #ffffff;
+  --border: #e8b84b;
+  --text: #2b2b2b;
+  --text-bright: #1a1a1a;
+  --text-muted: #6b5b3e;
+  --accent: #2b78c4;
+  --accent-bg: #2b78c422;
+  --accent-border: #2b78c455;
+  --green: #4caf50;
+  --purple: #9c27b0;
+  --orange: #ff8c00;
+  --red: #e63b2e;
+  --yellow: #e8b84b;
+  --pill-bg: #fff0cc;
+  --card-shadow: 3px 4px 0 #2b2b2b;
+  --topbar-bg: #e63b2e;
+  --topbar-shadow: 0 3px 0 #b22e24;
+  --dot-tex: rgba(230, 59, 46, 0.06);
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text);
+  background:
+    radial-gradient(var(--dot-tex) 1.6px, transparent 1.7px) 0 0 / 24px 24px,
+    radial-gradient(var(--dot-tex) 1.6px, transparent 1.7px) 12px 12px / 24px 24px,
+    var(--bg);
+}
+
+.navbar,
+.navbar-default {
+  background: var(--topbar-bg);
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--topbar-shadow);
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  font-family: var(--font-main);
+  font-weight: 700;
+}
+
+.navbar-default .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+}
+
+.navbar-default .navbar-brand::before {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  background: url("../images/Hopki_256.png") center / contain no-repeat;
+  border-radius: 8px;
+  flex: 0 0 auto;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.container {
+  max-width: 1120px;
+}
+
+.col-md-9,
+.bs-sidebar {
+  background: var(--bg-surface);
+  border: 2.5px solid var(--border);
+  border-radius: 18px 26px 20px 24px / 24px 20px 26px 18px;
+  box-shadow: var(--card-shadow);
+}
+
+.col-md-9 {
+  padding: 24px 30px;
+}
+
+.bs-sidebar {
+  padding: 12px;
+}
+
+.bs-sidebar .nav > li > a {
+  color: var(--text);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a {
+  color: var(--text-bright);
+  background: var(--accent-bg);
+  border-left-color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--text-bright);
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 2.35rem;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+p,
+li,
+td,
+th,
+dd,
+dt {
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline wavy var(--accent);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--red);
+  text-decoration-color: var(--red);
+}
+
+code,
+kbd {
+  font-family: var(--font-mono);
+  color: var(--text-bright);
+  background: var(--pill-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 1px 7px;
+}
+
+pre {
+  color: var(--text-bright);
+  background: var(--bg-input);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+}
+
+pre code {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+table {
+  background: var(--bg-surface);
+  border-collapse: collapse;
+}
+
+table th {
+  color: var(--text-bright);
+  background: var(--pill-bg);
+  font-family: var(--font-display);
+}
+
+table th,
+table td {
+  border: 2px solid var(--border) !important;
+}
+
+.hopki-banner {
+  display: block;
+  width: min(100%, 820px);
+  margin: 0 auto 1.25rem;
+  border-radius: 16px;
+}
+
+.admonition {
+  background: var(--orange-bg);
+  border-left: 5px solid var(--orange);
+  border-radius: 10px;
+}
+
+.admonition-title {
+  color: var(--text-bright);
+  background: transparent;
+}
+
+.hopki-theme-toggle {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 9999;
+  color: var(--text-bright);
+  background: var(--bg-elevated);
+  border: 2.5px solid var(--text-bright);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 #000;
+  padding: 7px 14px;
+  font-family: var(--font-main);
+  font-weight: 800;
+}
+
+.hopki-theme-toggle:hover {
+  transform: translate(-1px, -2px);
+}
+
+@media (max-width: 991px) {
+  .col-md-9,
+  .bs-sidebar {
+    border-radius: 12px;
+    box-shadow: none;
+  }
+}

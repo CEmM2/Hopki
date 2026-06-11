@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="User-facing documentation for Hopki split Hopkinson bar analysis.">
+        
+        <link rel="canonical" href="https://cemm2.github.io/Hopki/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Hopki User Guide</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="assets/stylesheets/hopki.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Hopki User Guide</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="getting-started/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="analysis-tab/" class="nav-link">Analysis Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="parameters/" class="nav-link">Parameters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="explore-tab/" class="nav-link">Explore Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="curve-cleanup-tab/" class="nav-link">Curve Cleanup Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="figures-tab/" class="nav-link">Figures Tab</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="command-line/" class="nav-link">Command Line</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="legacy-overview.html" class="nav-link">Legacy Overview</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="getting-started/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/CEmM2/Hopki/edit/master/docs/index.md" class="nav-link">Edit on CEmM2/Hopki
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#hopki-user-guide" class="nav-link">Hopki User Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#the-app-at-a-glance" class="nav-link">The App At A Glance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#typical-workflow" class="nav-link">Typical Workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#important-concepts" class="nav-link">Important Concepts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#more-detail" class="nav-link">More Detail</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pdf-copy" class="nav-link">PDF Copy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><img alt="Hopki banner" class="hopki-banner" src="assets/images/Hopki_banner.png" /></p>
+<h1 id="hopki-user-guide">Hopki User Guide<a class="headerlink" href="#hopki-user-guide" title="Permanent link">&para;</a></h1>
+<p>Hopki analyzes split Hopkinson, also called Kolsky bar, experiments. It takes incident and transmitted gauge signals, applies the same processing stages as the legacy MATLAB <code>twobar_g</code> workflow, and produces corrected pulses, forces, velocities, displacements, strain rate, and engineering and true stress-strain curves.</p>
+<p>Use this guide when you want to operate the desktop app rather than inspect the source code. It explains what each tab is for, what each button does, and what each editable parameter means.</p>
+<h2 id="the-app-at-a-glance">The App At A Glance<a class="headerlink" href="#the-app-at-a-glance" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="analysis-tab/">Analysis</a></td>
+<td>Load an experiment, edit experiment configuration, choose <code>tim_cut</code>, adjust dispersion/alignment settings, inspect the analysis plots, and export results.</td>
+</tr>
+<tr>
+<td><a href="explore-tab/">Explore</a></td>
+<td>Plot any derived quantity against time or true strain, optionally negate axes, and send the displayed curve onward.</td>
+</tr>
+<tr>
+<td><a href="curve-cleanup-tab/">Curve cleanup</a></td>
+<td>Trim, zero, smooth, scale, shift, toe-correct, or convert a stress-strain curve before saving or plotting.</td>
+</tr>
+<tr>
+<td><a href="figures-tab/">Figures</a></td>
+<td>Combine one or more curves into a publication figure, style curves and axes, and export PNG/PDF plus a reloadable <code>.npz</code> figure file.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typical-workflow">Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Prepare an experiment folder with two signal files and either <code>hopki.toml</code> configuration or the legacy <code>incid.exp</code>, <code>incid.spec</code>, and <code>DAMP_F</code> files.</li>
+<li>Open Hopki and use <strong>Load experiment...</strong> on the <a href="analysis-tab/">Analysis tab</a>.</li>
+<li>Drag the vertical line in <strong>Signals</strong> to set the pulse start, <code>tim_cut</code>.</li>
+<li>Verify the editable <a href="parameters/">parameters</a>, especially signal polarity, gauge distances, specimen dimensions, and reflected-pulse alignment.</li>
+<li>Use <strong>Export results...</strong> if you need MATLAB-style numeric output files.</li>
+<li>Send the true stress-strain curve to <a href="figures-tab/">Figures</a>, or clean a curve first in <a href="curve-cleanup-tab/">Curve cleanup</a>.</li>
+</ol>
+<h2 id="important-concepts">Important Concepts<a class="headerlink" href="#important-concepts" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><code>tim_cut</code></dt>
+<dd>The operator-selected pulse start time. In the GUI, it is the vertical draggable line on the <strong>Signals</strong> plot.</dd>
+<dt><code>x1</code> and <code>x2</code></dt>
+<dd>Gauge-to-specimen distances. <code>x1</code> is gauge 1 to specimen, and <code>x2</code> is specimen to gauge 2. If omitted from <code>hopki.toml</code>, Hopki estimates them from the signals and flags them for verification.</dd>
+<dt><code>reflect shift</code></dt>
+<dd>A sample shift applied to the reflected pulse after dispersion correction. It is used to improve force equilibrium.</dd>
+<dt>Signal polarity</dt>
+<dd>The incident pulse must be compressive, meaning negative in Hopki's sign convention. If curves look inverted or striker velocity has the wrong sign, use <strong>invert signal polarity</strong>.</dd>
+</dl>
+<h2 id="more-detail">More Detail<a class="headerlink" href="#more-detail" title="Permanent link">&para;</a></h2>
+<p>The <a href="legacy-overview.html">legacy single-page overview</a> is still included for historical context. The MkDocs pages are the maintained user-facing guide.</p>
+<h2 id="pdf-copy">PDF Copy<a class="headerlink" href="#pdf-copy" title="Permanent link">&para;</a></h2>
+<p>Download a printable copy of this guide: <a href="Hopki_User_Guide.pdf">Hopki_User_Guide.pdf</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="assets/javascripts/theme-toggle.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-06-11 20:31:58.755684+00:00
+-->
